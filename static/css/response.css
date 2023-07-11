@@ -1,0 +1,172 @@
+table{
+    width:100%;
+    border-collapse: collapse;
+}
+.res{
+    position:absolute;
+    top:20%;
+    left:20%;
+    right:20%;
+    z-index: 20;
+}
+.resp{
+    color: rgb(34, 33, 36);
+    border-bottom:  2px solid #0f0e0e;
+}
+.respd{
+    height:50px;
+}
+/* .star{
+    width:50px;
+    height:50px;
+    background-image: url("heart.jpg");
+    background-size:30px 30px;
+    background-repeat: no-repeat;
+    background-position:20%,20%;
+
+} */
+
+body{
+    margin: 0px;
+    background-color: aquamarine;
+    overflow: scroll;
+ }
+ 
+ 
+ .title{
+     position: absolute;
+     left: 38%;
+ }
+ ul {
+     list-style-type: none;
+     position: absolute;
+     top: 10%;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     background-color: #333;
+   }
+   
+   li {
+     float: left;
+   }
+   
+   li a {
+     display: block;
+     color: white;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+   }
+  .black_bar{
+     padding-right: 1000px;
+  }
+   
+   li a:hover {
+     background-color: #111;
+   }
+   .no_result{
+     text-align: center;
+     position: absolute;
+     top:20%;
+     width:100%;
+     font-size: 30px;
+   }
+
+  /* 警告視窗 來源網路 */
+   .alert {
+    position: fixed;
+    padding: 20px;
+    background-color: rgba(244, 67, 54,0.9);
+    color: rgba(0, 0, 0,1);
+    margin-bottom: 15px;
+    display:none;
+    top:2%;
+    left:40%;
+    width:20%;
+    z-index: 100;
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 30px;
+    line-height: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+
+/* popup window */
+.popupouter{
+  position: fixed;
+  width: 100%;
+  height:100%;
+  background-color:rgba(15, 14, 14,0.6);
+  z-index: 30;
+  display: none;
+}
+.popup{
+  position: absolute;
+  top:10%;
+  left:10%;
+  right:10%;
+  bottom:10%;
+  background-color:rgb(194, 203, 207);
+  color:#0f0e0e;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#commenttable{
+  position: relative;
+  text-align: left;
+  top:10%;
+  width: 50%;
+  left:10%;
+  font-size: 30px;
+}
+h2{
+  position: relative;
+  left:10%;
+  top:5%;
+}
+#content{
+  position: relative;
+  top:20%;
+  width:80%;
+  height:50%;
+  left:10%;
+  overflow: scroll;
+  font-size: 20px;
+}
+#comsub{
+  position: relative;
+  top:30%;
+  left:5%;
+}
+#popclose{
+  position: relative;
+  top:30%;
+  left:5%;
+}
+#show{
+  position: relative;
+  top:40%;
+  font-size: 30px;
+}
+#show tr{
+  position: relative;
+  left:10%;
+}
+
+
+

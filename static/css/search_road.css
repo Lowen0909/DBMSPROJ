@@ -1,0 +1,71 @@
+body{
+    margin: 0px;
+    background-color: aquamarine;
+ }
+ 
+ 
+ .title{
+     position: absolute;
+     left: 40%;
+ }
+ ul {
+     list-style-type: none;
+     position: absolute;
+     top: 10%;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     background-color: #333;
+   }
+   
+   li {
+     float: left;
+   }
+   
+   li a {
+     display: block;
+     color: white;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+   }
+  .black_bar{
+     padding-right: 1000px;
+  }
+   
+   li a:hover {
+     background-color: #111;
+   }
+   .b1{
+    position: absolute;
+    transform: scale(1.5);
+    top: 30%;
+    left: 37%;
+
+   }
+   .b2{
+    position: absolute;
+    transform: scale(1.5);
+    top: 35%;
+    left: 37%;
+   }
+   #input_1{
+    position: absolute;
+    transform: scale(1.5);
+    top:30%;
+    left: 44%;
+    right:44%;
+   }
+   #input_2{
+    position: absolute;
+    transform: scale(1.5);
+    top:35%;
+    left: 44%;
+    right:44%;
+   }
+   #button{
+    position: absolute;
+    transform: scale(1.5);
+    top:40%;
+    left: 47%;
+   }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>停停不累</title>
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js'></script>
+    <script src="{{ url_for('static', filename='js/favorite.js') }}"></script>
+    <link rel="stylesheet", href="{{ url_for('static', filename='css/favorite.css') }}",type="text/css">
+</head>
+<body>
+    <div>
+    <h1 class="title">停停不累-停車查詢系統</h1>
+    </div>
+    <ul>
+        <li><a class="active" href="/">首頁</a></li>
+        <li><a href="/road">路邊停車查詢</a></li>
+        <li><a href="/parkinglot">停車場查詢</a></li>
+        <li><a href="/favoritepage">常用停車場</a></li>
+        <li  class="black_bar"></li>
+        <li style="float: right;"><a >{{session["id"]}}</a></li>
+        <li style="float: right;"><a href="/logout">登出</a></li>
+        <li style="float: right;"><a href="/register" >新增帳號</a></li>
+        <li style="float: right;"><a href="/resetpass" >更改密碼</a></li> 
+    </ul>
+    <input type="button" id="parkinglot" value="常用停車場">
+    <input type="button" id="parkingseg" value="常用停車路段">
+    <div class="alert">
+        <span class="closebtn">&times;</span>  
+        <strong class="txt">資料更改成功</strong> 
+    </div>
+    <!-- 彈出視窗 -->
+    <div class="popupouter1">
+        <div class="popup1">
+            <table id = 'show1'>
+            </table>
+            <button class="closepop">關閉</button>
+        </div> 
+    </div>
+
+<!-- 彈出視窗 -->
+    <table id="show">
+
+    </table>
+    
+    
+  
+</body>
+</html>
