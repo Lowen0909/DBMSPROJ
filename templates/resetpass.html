@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>註冊</title>
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js'></script>
+        <link  href="{{ url_for('static', filename='css/register.css') }}" type='text/css' rel='stylesheet'>
+    </head>
+    <body>
+        <div>
+        <h1 class='title'>停停不累-停車查詢系統</h1>
+        </div>
+        {% if  session["loggedin"]%}
+        <ul>
+            <li><a class="active" href="/">首頁</a></li>
+            <li><a href="/road">路邊停車查詢</a></li>
+            <li><a href="/parkinglot">停車場查詢</a></li>
+            <li><a href="/favoritepage">常用停車場</a></li>
+            <li  class="black_bar"></li>
+            <li style="float: right;"><a >{{session["id"]}}</a></li>
+            <li style="float: right;"><a href="/logout">登出</a></li>
+            <li style="float: right;"><a href="/register" >新增帳號</a></li>
+            <li style="float: right;"><a href="/resetpass" >更改密碼</a></li>  
+        </ul>
+        {%else%}
+        <ul>
+            <li><a class="active" href="/">首頁</a></li>
+            <li><a href="/road">路邊停車查詢</a></li>
+            <li><a href="/parkinglot">停車場查詢</a></li>
+            <li><a href="/favoritepage">常用停車場</a></li>
+            <li  class="black_bar"></li>
+            <li style="float: right;"><a href="/login" >帳號登入</a></li>
+            <li style="float: right;"><a href="/register" >新增帳號</a></li>
+            <li style="float: right;"><a href="/resetpass" >更改密碼</a></li>  
+        </ul>
+        {% endif %}
+        <form method="post" action="/resetpass">
+            <table>
+            <tr class="account">
+                <td>帳號</td>
+                <td><input placeholder="請輸入帳號" name="account" id="account" type="text"></td>
+            </tr>
+            <tr class="password">
+                <td>密碼</td>
+                <td><input placeholder="請輸入新密碼" name="password" id="password" type="password"></td>
+            </tr>
+            </table>
+            <button type="submit" id="button">更改密碼</button>
+            <div class="error">{{msg}}</div>
+        </form>
+
+</body>
+</html>

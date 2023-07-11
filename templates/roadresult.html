@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>{{data.city}}路邊停車查詢</title>
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js'></script>
+        <script src="{{ url_for('static', filename='js/seg.js') }}"></script>
+        <link  href="{{ url_for('static', filename='css/response.css') }}" type='text/css' rel='stylesheet'>
+    </head>
+    <body>
+        <div>
+        <h1 class='title'>停停不累-停車查詢系統</h1>
+        </div>
+        {% if  session["loggedin"]%}
+    <ul>
+        <li><a class="active" href="/">首頁</a></li>
+        <li><a href="/road">路邊停車查詢</a></li>
+        <li><a href="/parkinglot">停車場查詢</a></li>
+        <li><a href="/favoritepage">常用停車場</a></li>
+        <li  class="black_bar"></li>
+        <li style="float: right;"><a >{{session["id"]}}</a></li>
+        <li style="float: right;"><a href="/logout">登出</a></li>
+        <li style="float: right;"><a href="/register" >新增帳號</a></li>
+        <li style="float: right;"><a href="/resetpass" >更改密碼</a></li>  
+    </ul>
+    {%else%}
+    <ul>
+        <li><a class="active" href="/">首頁</a></li>
+        <li><a href="/road">路邊停車查詢</a></li>
+        <li><a href="/parkinglot">停車場查詢</a></li>
+        <li><a href="/favoritepage">常用停車場</a></li>
+        <li  class="black_bar"></li>
+        <li style="float: right;"><a href="/login" >帳號登入</a></li>
+        <li style="float: right;"><a href="/register" >新增帳號</a></li>
+        <li style="float: right;"><a href="/resetpass" >更改密碼</a></li>  
+    </ul>
+    {% endif %}
+    <div class="alert">
+        <span class="closebtn">&times;</span>  
+        <strong class="txt">資料更改成功</strong> 
+    </div>
+
+<!-- 彈出視窗 -->
+    <div class="popupouter">
+        <div class="popup">
+            <h2>評論</h2>
+            <table id="commenttable">
+            <tr><td id="popcitycode"></td><td id="popid"></td><td id="popsegname"></td></tr>
+            </table>
+            <textarea  id="content" placeholder="輸入評論"  style="resize:none" required></textarea>
+            <input type="button" value="提交評論" id="comsub"> 
+            <input type="button" value="關閉" id="popclose"> 
+            <table id = 'show'></table>
+        </div> 
+    </div>
+
+<!-- 彈出視窗 -->
+
+
+            {%if data.isfind!=1%}
+                <div class='no_result'>查無資料!!</div>
+            {%else%}
+                <div class='res'>
+                    <table align='center'>
+                        <thead>
+                        <tr><th colspan='29'>{{data.city}}路邊停車查詢</th></tr>
+                        <tr>
+                            <th colspan='5'>ID</th>
+                            <th colspan='5'>名稱</th>
+                            <th colspan='5'>剩餘車位/所有車位</th>
+                            <th colspan='5'>營業狀態</th>
+                            <th colspan='5'>車位類型</th>
+                        </tr>
+                        </thead>
+                        {%for value in data.result%}
+                            <tbody class='resp'><tr class='respd'>
+                            <td colspan='5' align='center' >{{value["ID"]}}
+                            </td><td colspan='5' align='center' >{{value["名稱"]}}
+                            </td><td colspan='5' align='center' >{{value["剩餘車位"]}}
+                            </td><td colspan='5' align='center' >{{value["營業狀態"]}}
+                            </td><td colspan='5' align='center' >{{value["車位類型"]}}
+                            {%if fav.length!=0 and fav[value["ID"]]=="True"%}
+                               <td class='star' data-selected='false' colspan='2'><input type='button' value='刪除最愛停車路段' id="fav" data-id={{value['ID']}} data-citycode={{value["citycode"]}} class="del">
+                            {%else%}
+                               <td class='star' data-selected='false' colspan='2'><input type='button' value='加入最愛停車路段' id="fav" data-id={{value['ID']}} data-citycode={{value["citycode"]}} class="add">
+                            {%endif%}
+                            </td><td class='star' data-selected='false' colspan='1'><input type='button' id="com" value='評論' data-id={{value['ID']}} data-citycode={{value["citycode"]}} data-name={{value["名稱"]}}></td>
+                            </tr>
+                            </tbody>   
+                        {%endfor%}
+                    </table>
+                </div>
+            {%endif%}
+    </body>
+</html>

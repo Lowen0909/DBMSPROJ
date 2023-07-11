@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>停車場查詢</title>
+    <link rel="stylesheet", href="{{ url_for('static', filename='css/carpark.css') }}",type="text/css">
+</head>
+<body>
+    <div>
+    <h1 class="title">停車場查詢</h1>
+    </div>
+    {% if  session["loggedin"]%}
+    <ul>
+        <li><a class="active" href="/">首頁</a></li>
+        <li><a href="/road">路邊停車查詢</a></li>
+        <li><a href="/parkinglot">停車場查詢</a></li>
+        <li><a href="/favoritepage">常用停車場</a></li>
+        <li  class="black_bar"></li>
+        <li style="float: right;"><a >{{session["id"]}}</a></li>
+        <li style="float: right;"><a href="/logout">登出</a></li>
+        <li style="float: right;"><a href="/register" >新增帳號</a></li>
+        <li style="float: right;"><a href="/resetpass" >更改密碼</a></li>  
+    </ul>
+    {%else%}
+    <ul>
+        <li><a class="active" href="/">首頁</a></li>
+        <li><a href="/road">路邊停車查詢</a></li>
+        <li><a href="/parkinglot">停車場查詢</a></li>
+        <li><a href="/favoritepage">常用停車場</a></li>
+        <li  class="black_bar"></li>
+        <li style="float: right;"><a href="/login" >帳號登入</a></li>
+        <li style="float: right;"><a href="/register" >新增帳號</a></li>
+        <li style="float: right;"><a href="/resetpass" >更改密碼</a></li>  
+    </ul>
+    {% endif %}
+    <form   method="post" action="/parkinglotapi" align="center">
+        <table align="center">
+            <tr>
+                <td class="b1">縣市</td>
+                <td>
+                    <select name='city' id="input_1" required>
+                        <option value="" >請選擇縣市</option>
+                        <option value="Taoyuan">桃園市</option>
+                        <option value="Tainan">台南市</option>
+                        <option value="Keelung">基隆市</option>
+                        <option value="YilanCounty">宜蘭縣</option>
+                        <option value="HualienCounty">花蓮縣</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="b2">名稱</td>
+                <td>
+                    <input name="keyword" id="input_2" placeholder="輸入關鍵字">
+                </td>
+            </tr>
+            <tr><td colspan="2" align="center">
+            <input type="submit" value="查詢" name="button" id="button"/>
+            </td></tr> 
+         </table>
+     </form>
+      
+    
+    
+  
+</body>
+</html>

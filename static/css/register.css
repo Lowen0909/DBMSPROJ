@@ -1,0 +1,86 @@
+body{
+    margin: 0px;
+    background-color: aquamarine;
+ }
+ 
+ 
+ .title{
+     position: absolute;
+     left: 38%;
+ }
+ ul {
+     list-style-type: none;
+     position: absolute;
+     top: 10%;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     background-color: #333;
+   }
+   
+   li {
+     float: left;
+   }
+   
+   li a {
+     display: block;
+     color: white;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+   }
+  .black_bar{
+     padding-right: 1000px;
+  }
+   
+   li a:hover {
+     background-color: #111;
+   }
+   .no_result{
+     text-align: center;
+     position: absolute;
+     top:20%;
+     width:100%;
+     font-size: 30px;
+   }
+
+.ID{
+        
+        position: absolute;
+        transform: scale(1.5);
+        top:40%;
+        right:46%;
+        text-align: center;
+}
+.account{
+    
+    position: absolute;
+    transform: scale(1.5);
+    top:45%;
+    right:45%;
+    text-align: center;
+
+}
+.password{
+    
+    position: absolute;
+    transform: scale(1.5);
+    top:50%;
+    right:45%;
+    text-align: center;
+}
+
+
+#button{
+    position: absolute;
+    transform: scale(1.5);
+    top:55%;
+    left: 49%;
+}
+
+.error{
+    position: absolute;
+    transform: scale(1.5);
+    top:60%;
+    left: 43%;
+}
